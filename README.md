@@ -1,2 +1,2 @@
 # Flow
-Block based ML network builder | Built with Blocky and Pytorch
+Block based ML network builder | Built with Blockly and Pytorch
