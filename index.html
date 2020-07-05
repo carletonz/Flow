@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Flow</title>
+		<script src="blockly/blockly_compressed.js"></script>
+		<script src="blockly/blocks_compressed.js"></script>
+		<script src="blockly/msg/js/en.js"></script>
+		
+		<script src="blockly/python_compressed.js"></script>
+		
+		<script src="scripts/ml_blocks.js"></script>
+		<style>
+			body {
+				background-color: #fff;
+				font-family: sans-serif;
+			}
+			h1 {
+				font-weight: normal;
+				font-size: 140%;
+			}
+		</style>
+	</head>
+<body>
+<div id="blocklyDiv" style="height: 90vh; width: 90vw;"></div>
+
+<button onclick="gen_code()">Generate</button>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+<!--<block type="controls_if"></block>
+<block type="logic_compare"></block>
+<block type="controls_repeat_ext"></block>
+<block type="math_number">
+<field name="NUM">123</field>
+</block>
+<block type="math_arithmetic"></block>
+<block type="text"></block>
+<block type="text_print"></block>-->
+<block type="iris_data_set"></block>
+<block type="linear_layer"></block>
+<block type="module"></block>
+<block type="conv_2d"></block>
+<block type="view"></block>
+<block type="dimension"></block>
+</xml>
+
+<script>
+var workspace = Blockly.inject('blocklyDiv',
+{media: 'blockly/media/',
+toolbox: document.getElementById('toolbox')});
+
+function gen_code()
+{
+	Blockly.Python.addReservedWords('code');
+	var code = Blockly.Python.workspaceToCode(workspace);
+	console.log(code);
+}
+</script>
+
+</body>
+</html>
