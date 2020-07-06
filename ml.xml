@@ -351,7 +351,7 @@
               <block type="field_number" id="mR(QzP6vrv^nXP!|-FE?">
                 <field name="VALUE">0</field>
                 <field name="FIELDNAME">dim</field>
-                <field name="MIN">0</field>
+                <field name="MIN">-1</field>
                 <field name="MAX">Infinity</field>
                 <field name="PRECISION">1</field>
               </block>
@@ -377,13 +377,162 @@
       </block>
     </value>
     <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="EE7!IsqHD9|pQ[4E(.#3"></shadow>
+      <shadow type="type_null" id="rAAG(U{gH,sA)4{|GiR1"></shadow>
       <block type="type_other" id="Keb8aUobB7%g{|Cz!dT*">
         <field name="TYPE">dimension</field>
       </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="yKDEO~WFr8f|m*AtPrYg">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="j$QLG^PjyL~_jY30`l.c" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">mse_loss</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="IFWt3XszF.a-QLx/Tl:/">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="%qPP0125ck9)td-ld*BU">
+            <field name="TEXT">MSE Loss</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="h;cE%)K2%AyjI2HXWMz=" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="6`%o`pmYAFM.fNMV5^_f" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="nxI1|{5_5rFGA(GdbM0u"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="*cVP5VKBlas3+a(pjbo;"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="H)O8;=:_8+az2b(Rs#uQ">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="LFoO%!1|j7R;GQiXt(-8" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">cross_entropy_loss</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="rq0/AuWBMkg1oXCoQw^O">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="~oC))A85u97ePVoDnoh-">
+            <field name="TEXT">Cross Entropy Loss</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="}/PfXUG1?mB.2FnGo^JQ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="eIBTz,w)NE)_${Iz1CMF" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="`yhuJd)4b~EMMr2A]p7e"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="sz;?]/Kl-`#64?:l=eR^"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="2XchCG!GDBRtX;jR58u`">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="0#kS6[SW!SRGSi}K~-,%" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">sgd_optimizer</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Z|?[G(HDRY3oWziOSaxB">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="h7}LFe)v+imZfJw$Nx@Z">
+            <field name="TEXT">SGD Optimizer</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="8UYg|N;Z=E%Nxg`{B(z+">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="|[-31r2$avHF.]l43xmj">
+                <field name="TEXT">Learning Rate</field>
+                <next>
+                  <block type="field_number" id="rb]UX^+uj6bY7Mr6;LnO">
+                    <field name="VALUE">0</field>
+                    <field name="FIELDNAME">lr</field>
+                    <field name="MIN">-Infinity</field>
+                    <field name="MAX">Infinity</field>
+                    <field name="PRECISION">0</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="i|2?}0].^gs*mQZD{C3y">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id=",BdIbZhaqe~wC#(b5HFD">
+                    <field name="TEXT">Momentum</field>
+                    <next>
+                      <block type="field_number" id="pT$S_1T71}9A`!g-I5yd">
+                        <field name="VALUE">0</field>
+                        <field name="FIELDNAME">momentum</field>
+                        <field name="MIN">-Infinity</field>
+                        <field name="MAX">Infinity</field>
+                        <field name="PRECISION">0</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="kp/t;z61O{g+v@iSD^49" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="a^y_=,l=i]mIK6Nsh?.N" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="hHo*5q}!jG4;e?3z!.Vo"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="U[o25pU(8qexug}3-T{k"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="r]s$v+9u8GWQB-Db4:L]">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>

@@ -194,7 +194,7 @@ Blockly.Blocks['dimension'] = {
     this.appendValueInput("dim")
         .setCheck("dimension")
         .appendField("Dim")
-        .appendField(new Blockly.FieldNumber(0, 0, Infinity, 1), "dim");
+        .appendField(new Blockly.FieldNumber(0, -1, Infinity, 1), "dim");
     this.setOutput(true, "dimension");
     this.setColour(230);
  this.setTooltip("");
@@ -209,4 +209,72 @@ Blockly.Python['dimension'] = function(block) {
   var code = String(number_dim) + "," + value_dim;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
+};
+
+/*********MSE Loss*********/
+Blockly.Blocks['mse_loss'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("MSE Loss");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['mse_loss'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'import torch.nn as nn\n';
+  code += '_loss = nn.MSELoss()\n';
+  return code;
+};
+
+/*********Cross Entropy Loss*********/
+Blockly.Blocks['cross_entropy_loss'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Cross Entropy Loss");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['cross_entropy_loss'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'import torch.nn as nn\n';
+  code += '_loss = nn.CrossEntropyLoss()\n';
+  return code;
+};
+
+/*********SGD Optimizer*********/
+Blockly.Blocks['sgd_optimizer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("SGD Optimizer");
+    this.appendDummyInput()
+        .appendField("Learning Rate")
+        .appendField(new Blockly.FieldNumber(0), "lr");
+    this.appendDummyInput()
+        .appendField("Momentum")
+        .appendField(new Blockly.FieldNumber(0), "momentum");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['sgd_optimizer'] = function(block) {
+  var number_lr = block.getFieldValue('lr');
+  var number_momentum = block.getFieldValue('momentum');
+  // TODO: should net be call net?
+  var code = 'import torch.optim as optim\n';
+  code += 'optimizer = optim.SGD(net.parameters(), lr='+String(number_lr)+', momentum='+String(number_momentum)+')\n';
+  return code;
 };
