@@ -6,10 +6,11 @@
 		<script src="blockly/blockly_compressed.js"></script>
 		<script src="blockly/blocks_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
-		
 		<script src="blockly/python_compressed.js"></script>
-		
-		<script src="scripts/ml_blocks.js"></script>
+    
+		<script src="scripts/Flow.js"></script>
+		<script src="scripts/flow_block_def.js"></script>
+		<script src="scripts/flow_generator.js"></script>
 		<style>
 			body {
 				background-color: #fff;
@@ -27,24 +28,23 @@
 <button onclick="gen_code()">Generate</button>
 
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-<!--<block type="controls_if"></block>
-<block type="logic_compare"></block>
-<block type="controls_repeat_ext"></block>
-<block type="math_number">
-<field name="NUM">123</field>
-</block>
-<block type="math_arithmetic"></block>
-<block type="text"></block>
-<block type="text_print"></block>-->
-<block type="iris_data_set"></block>
-<block type="linear_layer"></block>
+
 <block type="module"></block>
+<block type="linear_layer"></block>
 <block type="conv_2d"></block>
+
 <block type="view"></block>
 <block type="dimension"></block>
+<block type="relu"></block>
+<block type="max_pool_2d"></block>
+
 <block type="mse_loss"></block>
 <block type="cross_entropy_loss"></block>
 <block type="sgd_optimizer"></block>
+
+<block type="iris_data_set"></block>
+
+<block type="train_holdout"></block>
 </xml>
 
 <script>
